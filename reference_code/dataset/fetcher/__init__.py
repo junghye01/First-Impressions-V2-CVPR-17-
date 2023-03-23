@@ -1,0 +1,1 @@
+from .fetcher import video_fetcher, audio_fetcher, bert_english_text_fetcher

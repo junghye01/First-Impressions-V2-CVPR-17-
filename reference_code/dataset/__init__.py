@@ -1,0 +1,1 @@
+from .chalearn_dataset import Chalearn_MultiModalDataset

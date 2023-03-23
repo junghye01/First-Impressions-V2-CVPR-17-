@@ -1,0 +1,19 @@
+datamodule:
+  video_dir: E:/chalearn_first_impression_dataset/frames/
+  audio_dir: E:/chalearn_first_impression_dataset/pyaudiofeatures_30/
+  text_dir: E:/chalearn_first_impression_dataset/scripts/
+  label_dir:
+    train: ./annotation/original/annotation_training.csv
+    valid: ./annotation/original/annotation_validation.csv
+    test: ./annotation/original/annotation_test.csv
+  target_list: 
+    - extraversion
+    - neuroticism
+    - agreeableness
+    - conscientiousness
+    - openness
+    - interview
+  frame_count: 30
+  seed: 0
+  text_max_len: 512
+
