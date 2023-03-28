@@ -20,6 +20,11 @@ sr='/home/irteam/junghye-dcloud-dir/chalearn/data/4F-WBGPXiqQ.001.mp4'
 #update_mp4_list=os.listdir('/home/irteam/junghye-dcloud-dir/chalearn/Updated_mp4')
 #print(len(update_mp4_list))
 
-data=pd.read_csv('/home/irteam/junghye-dcloud-dir/chalearn/data/labels.csv',index_col=0)
-print(data.columns)
-print(data.index)
+#data=pd.read_csv('/home/irteam/junghye-dcloud-dir/chalearn/data/labels.csv',index_col=0)
+#print(data.columns)
+#print(data.index)
+
+#test=['a','b']+['c']
+#print(test)
+
+print(len(all_dir2))

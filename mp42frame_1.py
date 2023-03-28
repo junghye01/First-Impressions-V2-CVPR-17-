@@ -33,10 +33,10 @@ with open(mp4_list,'r',encoding='utf8') as updated_list:
                 current_frame+=1
 
                 # sampling
-                if(current_frame %10 ==0):
-                    name='frame'+str(current_frame)+'.jpg'
-                    print(f'Creating:{name}')
-                    cv2.imwrite(os.path.join(path_to_save,name),frame)
+                
+                name='frame'+str(current_frame)+'.jpg'
+                print(f'Creating:{name}')
+                cv2.imwrite(os.path.join(path_to_save,name),frame)
 
             else:
                 break
