@@ -3,9 +3,9 @@ datamodule:
   audio_dir: E:/chalearn_first_impression_dataset/pyaudiofeatures_30/
   text_dir: E:/chalearn_first_impression_dataset/scripts/bert_embeddings/
   label_dir:
-    train: ./chalearn_first_impression_v2_data/annotation/original/annotation_training.csv
-    valid: ./chalearn_first_impression_v2_data/annotation/original/annotation_validation.csv
-    test: ./chalearn_first_impression_v2_data/annotation/original/annotation_test.csv
+    train: E:/chalearn_first_impression_dataset/annotation/original/annotation_training.csv
+    valid: E:/chalearn_first_impression_dataset/annotation/original/annotation_validation.csv
+    test: E:/chalearn_first_impression_dataset/annotation/original/annotation_test.csv
   target_list: 
     - openness
     - conscientiousness
@@ -32,11 +32,9 @@ module:
     audio_input_size: 68
     audio_hidden_size: 32
     audio_num_layers: 2
-    text_input_size: 768
-    text_hidden_size: 256
   regressor:
     fusion_hidden_size: 256
     num_class: 6
-
-trainer:
-  max_epochs: 200
+  classifier:
+    fusion_hidden_size: 256
+    num_class: 2

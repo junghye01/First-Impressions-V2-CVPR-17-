@@ -1,1 +1,2 @@
-from .chalearn_dataset import Chalearn_MultiModalDataset
+from .chalearn_video_dataset import Chalearn_VideoDataset
+from .chalearn_audio_dataset import Chalearn_AudioDataset

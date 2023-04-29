@@ -33,24 +33,3 @@ def audio_fetcher(audio_file_path: str, frame_count: int = 30):
 
     audio_tensor = torch.from_numpy(audio_feat)
     return audio_tensor
-
-
-def bert_english_text_fetcher(
-    script, tokenizer, max_len=512
-) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
-    tokenized_script = ["[CLS]"] + tokenizer.tokenize(script) + ["[SEP]"]
-    tokenized_script = tokenizer.convert_tokens_to_ids(tokenized_script)
-    tokenized_script = torch.tensor(tokenized_script, dtype=torch.long)
-
-    segment_id = torch.ones_like(tokenized_script)
-    mask = torch.ones_like(tokenized_script)
-
-    def _pad(tensor: torch.Tensor, max_len) -> torch.Tensor:
-        pad = torch.zeros(max_len - len(tensor), dtype=torch.long)
-        return torch.cat([tensor, pad])
-
-    tokenized_script = _pad(tokenized_script, max_len)
-    segment_id = _pad(segment_id, max_len)
-    mask = _pad(mask, max_len)
-
-    return tokenized_script, segment_id, mask
