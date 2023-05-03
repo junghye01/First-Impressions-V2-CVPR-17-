@@ -8,25 +8,25 @@ import csv
 index=['training','validation','test']
 
 # true-value pkl 
-ground_truth_path='/home/irteam/junghye-dcloud-dir/chalearn_data/data/annotation_*.pkl'
+ground_truth_path='/home/irteam/junghye-dcloud-dir/chalearn_data/Labels/annotation_*.pkl'
 
 
 # eth_gender file path
-eth_gender_1=pd.read_csv('/home/irteam/junghye-dcloud-dir/chalearn_data/data/eth_gender_annotations_dev.csv',sep=';')
-eth_gender_2=pd.read_csv('/home/irteam/junghye-dcloud-dir/chalearn_data/data/eth_gender_annotations_test.csv',sep=';')
+eth_gender_1=pd.read_csv('/home/irteam/junghye-dcloud-dir/chalearn_data/Labels/eth_gender_annotations_dev.csv',sep=';')
+eth_gender_2=pd.read_csv('/home/irteam/junghye-dcloud-dir/chalearn_data/Labels/eth_gender_annotations_test.csv',sep=';')
 eth_gender_file=pd.concat([eth_gender_1,eth_gender_2]).reset_index(drop=True)
 
 
 #result csv path
-csv_save_path='/home/irteam/junghye-dcloud-dir/chalearn_data/data/annotation_*.csv'
+csv_save_path='/home/irteam/junghye-dcloud-dir/chalearn_data/Labels/annotation_*.csv'
 
 
 
 
 for idx in index:
    
-    ground_truth_path='/home/irteam/junghye-dcloud-dir/chalearn_data/data/annotation_*.pkl'
-    csv_save_path='/home/irteam/junghye-dcloud-dir/chalearn_data/data/annotation_*.csv'
+    ground_truth_path='/home/irteam/junghye-dcloud-dir/chalearn_data/Labels/annotation_*.pkl'
+    csv_save_path='/home/irteam/junghye-dcloud-dir/chalearn_data/Labels/annotation_*.csv'
     # path to save
     csv_save_path=csv_save_path.replace('*',idx)
     print(csv_save_path)
